@@ -1,0 +1,17 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.page { padding: 32px; }
+.title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.card { padding: 20px; }
+.header { @include flex(center, flex-start, 10px); margin-bottom: 12px; }
+.icon { font-size: 1.4rem; }
+.name { flex: 1; font-weight: 600; font-size: 0.95rem; }
+.pct { color: $text-secondary; font-size: 0.85rem; }
+.barBg { height: 6px; background: $bg-secondary; border-radius: 3px; overflow: hidden; }
+.barFill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }

@@ -1,0 +1,140 @@
+// ──────────────────────────────────────────────────────────
+// TYPOGRAPHY - Text Styles & Font Management
+// ──────────────────────────────────────────────────────────
+
+@use 'tokens' as *;
+
+// Text - Title (Large heading)
+.text-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: $line-height-tight;
+  color: $text-primary;
+}
+
+// Text - Subtitle (Medium heading)
+.text-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: $line-height-tight;
+  color: $accent-primary;
+}
+
+// Text - Body (Regular text)
+.text-body {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: $line-height-normal;
+  color: $text-secondary;
+}
+
+// Text - Label (Small text)
+.text-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: $line-height-normal;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Heading 1
+h1 {
+  @extend .text-title;
+  margin-bottom: $space-md;
+}
+
+// Heading 2
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: $line-height-tight;
+  color: $text-primary;
+  margin-bottom: $space-md;
+}
+
+// Heading 3
+h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: $line-height-tight;
+  color: $text-primary;
+  margin-bottom: $space-sm;
+}
+
+// Heading 4
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: $line-height-normal;
+  color: $text-primary;
+  margin-bottom: $space-sm;
+}
+
+// Paragraph
+p {
+  @extend .text-body;
+  margin-bottom: $space-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Small text
+small {
+  font-size: 0.8rem;
+  color: $text-secondary;
+}
+
+// Muted text
+.muted {
+  color: $text-muted;
+}
+
+// Accent primary
+.accent-primary {
+  color: $accent-primary;
+}
+
+// Accent blue
+.accent-blue {
+  color: $accent-blue;
+  font-weight: 600;
+}
+
+// Accent green
+.accent-green {
+  color: $accent-green;
+}
+
+// Link styling
+a {
+  color: $text-primary;
+  text-decoration: none;
+  transition: color $transition;
+
+  &:hover {
+    color: $accent-primary;
+  }
+}
+
+// Code styling
+code {
+  font-family: $font-family-mono;
+  font-size: 0.9em;
+  background: $bg-secondary;
+  padding: 2px 6px;
+  border-radius: $radius-sm;
+  color: $accent-blue;
+}
+
+// Bold text
+strong {
+  font-weight: 600;
+}
+
+// Italic text
+em {
+  font-style: italic;
+}

@@ -1,0 +1,17 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.page { padding: 32px; }
+.title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+.grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.item {
+  @include flex(center, flex-start, 10px);
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  padding: 14px 20px;
+  transition: border-color $transition;
+  &:hover { border-color: var(--color, $accent-primary); }
+}
+.icon { font-size: 1.5rem; }
+.name { font-size: 0.9rem; font-weight: 600; }

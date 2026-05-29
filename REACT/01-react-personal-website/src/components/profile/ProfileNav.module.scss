@@ -1,0 +1,85 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.sidebar {
+  width: 220px;
+  background: $bg-secondary;
+  border-right: 1px solid $border;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow-y: auto;
+  @include scrollbar;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $border;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, $accent-primary, $accent-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.role {
+  font-size: 12px;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  @include flex(center, flex-start, 12px);
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+
+  &:hover {
+    background: $bg-card;
+    color: $text-primary;
+  }
+
+  &.active {
+    background: $bg-card;
+    border-color: $accent-primary;
+    color: $accent-primary;
+  }
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.label {
+  flex: 1;
+}

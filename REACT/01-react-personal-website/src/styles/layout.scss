@@ -1,0 +1,156 @@
+// ──────────────────────────────────────────────────────────
+// LAYOUT - Base Structural Styles
+// ──────────────────────────────────────────────────────────
+
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Main app container
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $bg-primary;
+}
+
+// Main content area
+.app-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+// Sidebar layout
+.sidebar {
+  width: $sidebar-width;
+  background: $bg-secondary;
+  border-right: 1px solid $border;
+  padding: $space-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  overflow-y: auto;
+  @include scrollbar;
+}
+
+// Main content
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  background: $bg-primary;
+  @include scrollbar;
+}
+
+// Header
+.header {
+  height: $header-height;
+  background: $bg-secondary;
+  border-bottom: 1px solid $border;
+  display: flex;
+  align-items: center;
+  padding: 0 $space-lg;
+  gap: $space-md;
+  flex-shrink: 0;
+}
+
+// Footer / Bottom Navigation
+.bottom-nav {
+  height: $footer-height;
+  background: $bg-secondary;
+  border-top: 1px solid $border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-lg;
+  padding: 0 $space-lg;
+  flex-shrink: 0;
+}
+
+// Container
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: $space-xl;
+}
+
+// Grid layouts
+.grid-2 {
+  @include grid(2);
+}
+
+.grid-3 {
+  @include grid(3);
+}
+
+.grid-4 {
+  @include grid(4);
+}
+
+// Responsive grid
+@media (max-width: 1024px) {
+  .grid-4 {
+    @include grid(2);
+  }
+
+  .grid-3 {
+    @include grid(2);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    @include grid(1);
+  }
+
+  .sidebar {
+    width: auto;
+    border-right: none;
+    border-bottom: 1px solid $border;
+    gap: $space-md;
+    padding: $space-md;
+  }
+
+  .header {
+    padding: 0 $space-md;
+  }
+}
+
+// Flex utilities
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  @include flex(center, center);
+}
+
+.flex-between {
+  @include flex(center, space-between);
+}
+
+.flex-start {
+  @include flex(flex-start, flex-start);
+}
+
+// Spacing utilities
+.gap-xs {
+  gap: $space-xs;
+}
+
+.gap-sm {
+  gap: $space-sm;
+}
+
+.gap-md {
+  gap: $space-md;
+}
+
+.gap-lg {
+  gap: $space-lg;
+}
+
+.gap-xl {
+  gap: $space-xl;
+}

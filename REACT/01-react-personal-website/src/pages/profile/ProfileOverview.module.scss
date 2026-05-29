@@ -1,0 +1,346 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.overview {
+  padding: 32px;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+// Hero
+.hero {
+  @include flex(center, space-between);
+}
+.heroTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.heroRole {
+  font-size: 1.2rem;
+  color: $accent-primary;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.accent { color: $accent-primary; }
+.accentBlue { color: $accent-blue; font-weight: 600; }
+
+// Grid: 2x2 with flexible widths (2fr 1fr), equal heights
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  auto-rows: minmax(380px, auto);
+}
+
+.bioCard {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bioInner {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.skillsCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  @include scrollbar;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.expCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  @include scrollbar;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.projectsCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: $bg-secondary;
+  border: 1px solid $border-light;
+  border-radius: $radius-md;
+  transition: all $transition;
+
+  &:hover {
+    background: $bg-card;
+    border-color: $accent-primary;
+  }
+}
+
+.projectTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.projectIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.projectFeatured {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: $accent-blue;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 4px 8px;
+  border-radius: $radius-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.projectName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 4px 0;
+}
+
+.projectCat {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.projectDesc {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  line-height: 1.4;
+  margin: 4px 0;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.projectTag {
+  font-size: 0.7rem;
+  color: $text-muted;
+  background: $bg-primary;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid $border-light;
+}
+
+.projectLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid $border-light;
+  margin-top: 8px;
+}
+
+.demoLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: $bg-secondary;
+  border: 1px solid $border-light;
+  border-radius: $radius-sm;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all $transition;
+  color: $text-primary;
+
+  &:hover {
+    background: $accent-blue;
+    border-color: $accent-blue;
+    color: white;
+  }
+}
+
+.avatarWrap { flex-shrink: 0; }
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid $accent-primary;
+}
+.avatarFallback {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $accent-primary, $accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  border: 3px solid $border;
+}
+.tagline {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.bio {
+  color: $text-secondary;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.techBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.badge {
+  background: $bg-secondary;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: $text-secondary;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color $transition, color $transition;
+  &:hover { border-color: $accent-primary; color: $text-primary; }
+}
+
+
+.panelHeader {
+  @include flex(center, space-between);
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border-light;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+.viewAll {
+  font-size: 0.78rem;
+  color: $accent-blue;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover { text-decoration: underline; }
+}
+
+.skillRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 4px 8px;
+}
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+.skillPct {
+  font-size: 0.78rem;
+  color: $text-secondary;
+}
+.skillBar {
+  grid-column: 1 / -1;
+  height: 4px;
+  background: $bg-secondary;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skillFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+// Experience
+.expRow {
+  display: flex;
+  gap: 12px;
+}
+.expDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $accent-primary;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.expTitle {
+  @include flex(center, space-between);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.expPeriod { 
+  font-size: 0.75rem; 
+  color: $text-secondary; 
+}
+
+.expCompany { 
+  font-size: 0.78rem; 
+  color: $text-muted; 
+  margin-bottom: 4px; 
+}
+
+.expDesc { 
+  font-size: 0.78rem; 
+  color: $text-secondary; 
+  line-height: 1.4; 
+}

@@ -1,0 +1,56 @@
+// ──────────────────────────────────────────────────────────
+// DESIGN TOKENS - Color, Spacing & Theme Configuration
+// ──────────────────────────────────────────────────────────
+
+// Color - Background
+$bg-primary: #0d1117;
+$bg-secondary: #161b22;
+$bg-card: #1c2333;
+$bg-card-hover: #21293a;
+$bg-sidebar: #0d1117;
+
+// Color - Border
+$border: #30363d;
+$border-light: #21293a;
+
+// Color - Accent
+$accent-primary: #7c6af7;
+$accent-blue: #38bdf8;
+$accent-green: #4ade80;
+
+// Color - Text
+$text-primary: #e6edf3;
+$text-secondary: #8b949e;
+$text-muted: #484f58;
+
+// Font Family
+$font-family-base: 'Inter', 'Segoe UI', sans-serif;
+$font-family-mono: 'Courier New', monospace;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-2xl: 48px;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+
+// Layout Dimensions
+$sidebar-width: 220px;
+$header-height: 64px;
+$footer-height: 64px;
+
+// Animation & Transitions
+$transition: 0.2s ease;
+$transition-slow: 0.3s ease;
+$transition-fast: 0.1s ease;
+
+// Line Heights
+$line-height-tight: 1.2;
+$line-height-normal: 1.6;
+$line-height-relaxed: 1.8;

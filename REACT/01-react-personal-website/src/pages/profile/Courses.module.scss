@@ -1,0 +1,10 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.page { padding: 32px; }
+.title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.card { padding: 20px; @include flex(center, flex-start, 16px); }
+.badge { font-size: 1.8rem; flex-shrink: 0; }
+.name { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+.meta { font-size: 0.78rem; color: $text-muted; }

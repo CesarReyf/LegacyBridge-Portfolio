@@ -1,0 +1,94 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+// === GithubButton ===
+.button {
+  @include flex(center, center);
+  gap: 6px;
+  padding: 8px 12px;
+  background: $bg-secondary;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  color: $text-primary;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all $transition;
+  width: fit-content;
+
+  &:hover {
+    background: $bg-card;
+    border-color: $accent-primary;
+    color: $accent-primary;
+  }
+}
+
+// === ProjectNav ===
+.sidebar {
+  width: 220px;
+  background: $bg-secondary;
+  border-right: 1px solid $border;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  @include scrollbar;
+}
+
+.backBtn {
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background: $bg-card;
+    border-color: $accent-primary;
+    color: $accent-primary;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  @include flex(center, flex-start, 12px);
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+
+  &:hover {
+    background: $bg-card;
+    color: $text-primary;
+  }
+
+  &.active {
+    background: $bg-card;
+    border-color: $accent-primary;
+    color: $accent-primary;
+  }
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.label {
+  flex: 1;
+}

@@ -1,0 +1,23 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.button {
+  @include flex(center, center);
+  gap: 6px;
+  padding: 8px 12px;
+  background: $bg-secondary;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  color: $text-primary;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all $transition;
+  width: fit-content;
+
+  &:hover {
+    background: $bg-card;
+    border-color: $accent-primary;
+    color: $accent-primary;
+  }
+}

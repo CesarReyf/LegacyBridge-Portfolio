@@ -1,0 +1,16 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.shell {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  background: $bg-primary;
+  @include scrollbar;
+}

@@ -1,0 +1,45 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+// === Button ===
+.button {
+  padding: 10px 20px;
+  border-radius: $radius-md;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all $transition;
+  cursor: pointer;
+  border: none;
+
+  &.primary {
+    background: $accent-primary;
+    color: white;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(124, 106, 247, 0.3);
+    }
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid $accent-primary;
+    color: $accent-primary;
+
+    &:hover {
+      background: rgba(124, 106, 247, 0.1);
+    }
+  }
+}
+
+// === Card ===
+.card {
+  @include card;
+  padding: 16px;
+  transition: all $transition;
+
+  &:hover {
+    background: $bg-card-hover;
+    border-color: $accent-primary;
+  }
+}
